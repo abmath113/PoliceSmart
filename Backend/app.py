@@ -6,7 +6,7 @@ from flask import Flask, render_template,request,redirect
 
 app = Flask(__name__)
 
-@app.route('/CitizenSignUp')
+@app.route('/CitizenSignUp', methods=['GET', 'POST'])
 def CitizenSignUp():
     if request.method == "POST":
         first = request.form.get("firstname")
@@ -21,7 +21,7 @@ def CitizenSignUp():
     return render_template('signup.html')
   
   
-@app.route('/CitizenLogin')
+@app.route('/CitizenLogin', methods=['GET', 'POST'])
 def CitizenLogin():
     if request.method == "POST":
         password = request.form.get("password")
@@ -31,7 +31,7 @@ def CitizenLogin():
     return render_template('login.html')
     
 
-@app.route('/PoliceSignUp')
+@app.route('/PoliceSignUp', methods=['GET', 'POST'])
 def PoliceSignUp():
     if request.method == "POST":
         first = request.form.get("firstname")
@@ -46,16 +46,16 @@ def PoliceSignUp():
     return render_template('sign_police.html')
 
 
-@app.route('/policeLogin')
+@app.route('/policeLogin', methods=['GET', 'POST'])
 def policeLogin():
     if request.method == "POST":
         password = request.form.get("password")
         police = request.form.get("Police")
-        return redirect('/')
+        return redirect('/complains')
 
     return render_template('login_police.html')
 
-@app.route('/complains')
+@app.route('/complains', methods=['GET', 'POST'])
 def complain():
     if request.method == "POST":
         name = request.form.get("name")
