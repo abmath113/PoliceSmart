@@ -3,51 +3,74 @@ from warnings import catch_warnings
 import random
 import pandas as pd
 from flask import Flask, render_template,request,redirect
-import datetime
-from firebase import firebase
-
-firebase = firebase.FirebaseApplication("https://police-fir-ca11f-default-rtdb.firebaseio.com/",None)
-
-data = {
-    'Name':'Naval pimpude',
-    'Email':'naval@gmail.com',
-    'City':'Thane',
-    'Location':'naupada',
-    'Complain-type':'Noise pollution',
-    'Complain':'Loud sound from tip top plaza during 12th exam after 10:30am also.'
-}
-
-result = firebase.post(data)
 
 app = Flask(__name__)
 
-x = datetime.datetime.now()
-# client=MongoClient()
-# client = MongoClient("mongodb://localhost:27017/")
+@app.route('/CitizenSignUp')
+def CitizenSignUp():
+    if request.method == "POST":
+        first = request.form.get("firstname")
+        last = request.form.get("lastname")
+        mobile = request.form.get("phone")
+        email = request.form.get("email")
+        aadhar = request.form.get("aadhar")
+        password = request.form.get("password")
 
-# mydatabase = client['Uni_Registration']
-# mycollection=mydatabase['RegistrationPass']
+        return redirect('/CitizenLogin')
 
-@app.route('/data')
-def get_time():
+    return render_template('signup.html')
   
-    # Returning an api for showing in  reactjs
-    return {
-        'Name':"geek", 
-        "Age":"22",
-        
-        "programming":"python"
-        }
   
+@app.route('/CitizenLogin')
+def CitizenLogin():
+    if request.method == "POST":
+        password = request.form.get("password")
+        aadhar = request.form.get("aadhar")
+        return redirect('/complains')
+
+    return render_template('login.html')
     
 
+@app.route('/PoliceSignUp')
+def PoliceSignUp():
+    if request.method == "POST":
+        first = request.form.get("firstname")
+        last = request.form.get("lastname")
+        mobile = request.form.get("phone")
+        email = request.form.get("email")
+        aadhar = request.form.get("aadhar")
+        password = request.form.get("password")
+
+        return redirect('/policeLogin')
+
+    return render_template('sign_police.html')
+
+
+@app.route('/policeLogin')
+def policeLogin():
+    if request.method == "POST":
+        password = request.form.get("password")
+        police = request.form.get("Police")
+        return redirect('/')
+
+    return render_template('login_police.html')
+
+@app.route('/complains')
+def complain():
+    if request.method == "POST":
+        name = request.form.get("name")
+        aadhar = request.form.get("aadhar")
+        date = request.form.get("date")
+        victimname = request.form.get("victim")
+        place = request.form.get("place")
+        crimetype = request.form.get("crimetype")
+        description = request.form.get("describe")
+        proof = request.form.get("proof")
+
+        return render_template('Complain.html',message='done')
+
+    return render_template('Complain.html')
      
-
-
-# @app.route('/login',methods=['GET', 'POST'])
-# def login():
-   
-#     return render_template('login.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
