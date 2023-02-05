@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+
+<style>
+input[type=number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+h3
+{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: xx-large;
+}
+
+h2
+{
+    font-family: 'Trebuchet MS', 'Lucida Sans', Arial, sans-serif;
+    font-size: large;
+}
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+</style>
+
+
+<body>
+
+<center><h3>Officer Assignation</h3></center>
+
+<div>
+  <form method="POST">
+    
+    <label>Case Type (3:-rape 2:-murder 0:-burglary 1:-fraud)</label>
+    <input type ="number"  name = 'data1'></input>
+    <br>
+    
+    <label>Money Lost</label>
+    <input type ="number"  name = 'data3'></input>
+    <br>
+ 
+   
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+<h2>Rank of officer needed for this case : {{prediction}}</h2>
+</body>
+</html>
