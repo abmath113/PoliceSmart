@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+<style>
+    body {
+        font-family: "Lato", sans-serif;
+      }
+      
+      .sidenav {
+        height: 100%;
+        width: 300px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-image: url(../static/photo.webp);
+        overflow-x: hidden;
+        padding-top: 20px;
+      }
+      
+      .sidenav a {
+        padding: 6px 6px 6px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #ffffff;
+        display: block;
+      }
+      
+      .sidenav a:hover {
+        color: #fce704;
+      }
+      
+      .main {
+        margin-left: 300px; /* Same as the width of the sidenav */
+      }
+      
+      @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 15px;}
+      }
+      </style>
+      
+
+</head>
+
+<body>
+
+    <div class="sidenav">
+        <a href="#">Dashbord</a>
+        <a href="#">Crime Registration</a>
+        <a href="#">Status</a>
+        <a href="#">Contact</a>
+      </div>
+      
+      <div class="main p-5">
+        <h1 class="text-bold text-center text-blue-900 text-4xl mb-4 mt-5">Your Complain Status</h1>
+
+        <ul class="stepper p-5" data-mdb-stepper="stepper">
+            <li class="stepper-step stepper-active">
+                <div class="stepper-head">
+                    <span class="stepper-head-icon"> 1 </span>
+                    <span class="stepper-head-text"> step1 </span>
+                </div>
+                <div class="stepper-content">
+                    Complain Submitted to head office.
+                </div>
+            </li>
+            <li class="stepper-step">
+                <div class="stepper-head">
+                    <span class="stepper-head-icon"> 2 </span>
+                    <span class="stepper-head-text"> step2 </span>
+                </div>
+                <div class="stepper-content">
+                    Complain under Review by our officials.
+                </div>
+            </li>
+            <li class="stepper-step">
+                <div class="stepper-head">
+                    <span class="stepper-head-icon"> 3 </span>
+                    <span class="stepper-head-text"> step3 </span>
+                </div>
+                <div class="stepper-content">
+                    Complain is registered to your nearest police station.
+                </div>
+            </li>
+        </ul>
+      </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+<script src="./TW-ELEMENTS-PATH/dist/js/index.min.js"></script>
+
+</html>

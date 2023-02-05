@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>Mumbai Police</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    font: 400 15px Lato, sans-serif;
+    line-height: 1.8;
+    color: #818181;
+  }
+  h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #303030;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    color: #303030;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }  
+  .jumbotron {
+    background-color: #0212f0;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo-small {
+    color: #0212f0;
+    font-size: 50px;
+  }
+  .logo {
+    color: #0212f0;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #0212f0;
+  }
+  .carousel-indicators li {
+    border-color: #0212f0;
+  }
+  .carousel-indicators li.active {
+    background-color: #0212f0;
+  }
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #0212f0; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #0212f0;
+    background-color: #fff !important;
+    color: #0212f0;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #0212f0 !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: white !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #0212f0;
+    color: #fff;
+  }
+  .navbar {
+    margin-bottom: 0;
+    background-color: #0212f0;
+    z-index: 9999;
+    border: 0;
+    font-size: 18px !important;
+    line-height: 1.42857143 !important;
+    /* letter-spacing: 4px; */
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+  }
+  /* .navbar li a, .navbar .navbar-brand {
+    color: #fff !important;
+  } */
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #0212f0 !important;
+    background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #0212f0;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <!-- <a class="navbar-brand" href="#myPage">Logo</a> -->
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/" style="color: #fff;">About</a></li>
+        <!-- <li><a href="/CitizenLogin">Citizen Login</a></li>
+        <li><a href="/CitizenSignUp">Citizen Signup</a></li>
+        <li><a href="/PoliceSignUp">Police Login</a></li>
+        <li><a href="/policeLogin">Police Signup</a></li> -->
+        <li class="m-2">
+          <div class="btn-group">
+            <button style="background-color: #0212f0; color: #fff; margin-left: 5%; border: none;" class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Police Corner <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="/PoliceSignUp">Police Login</a></li>
+              <li><a href="/policeLogin">Police Signup</a></li>
+            </ul>
+          </div>
+        </li>
+          
+
+        <li>
+        <div class="btn-group">
+          <button style="background-color: #0212f0; color: #fff; margin-left: 5%; border: none;" class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Citizen Corner <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="/CitizenLogin">Citizen Login</a></li>
+            <li><a href="/CitizenSignUp">Citizen Signup</a></li>
+          </ul>
+        </div>
+      </li>
+        
+        <li><a href="/contact" style="color: #fff;margin-left: 5%;">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h1>Mumbai Police</h1> 
+  <p>We define limits on crimes</p> 
+</div>
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid m-0">
+  <div class="row">
+    <div class="col-sm-6">
+      <h2>About</h2><br>
+      <h4>The Mumbai Police is the police department of the city of Mumbai, Maharashtra. It is a part of Maharashtra Police and has the primary responsibilities of law enforcement and investigation within the limits of Mumbai. The force's motto is "Sadrakṣaṇāya Khalanigrahaṇāya"</h4><br>
+      <p>Mumbai Police shall ensure the Rule of Law, enforce the law of the land impartially and firmly without fear or favour, and strive to create a fear free environment that is conducive to growth and development.           Mumbai Police will remain committed to maintaining public order, preventing and detecting crime, maintaining and promoting communal harmony, ensuring a smooth flow of traffic, and taking strong action against terrorism, organized crime, anti-social / illicit activities / elements. Shri. Vivek Phansalkar, I.P.S., Commissioner of Police, Greater Mumbai..</p>
+    </div>
+    <div class="col-sm-6">
+      <img style="height: 480px; width: 700px;" src="../static/Mumbai_Police_logo.png" alt="police">
+    </div>
+  </div>
+</div>
+
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="col-sm-8">
+        <img src="../static/668813-mumbai-police-02.jpg" style="height: 600px;width: 400px;" alt="">
+      </div>
+      
+    </div>
+    <div class="col-sm-8">
+      <h2>Our Values</h2><br>
+      <h4><strong>MISSION:</strong><br> Mumbai Police shall uphold the Rule of Law impartially and firmly without fear of favour, and strive to make the city free of fear and conductive to growth and development.
+                                         We shall keep our personal integrity high, make the force corruption-free, ensure prompt and compassionate response, strive continuously to raise our professional standards, work as a team, bring a transparency and ensure the welfare of our force. We will work in partnership with the community to serve and protect all, particularly the weaker and marginalized sections of society to make Mumbai safer and better place.</h5><br>
+      <h4><strong>VISION:</strong><br> Carrying it’s rich legacy of the past and it’s great image created by the predecessors in the force, Mumbai Police is fully geared up to deal with the multifaceted challenges of policing the megapolis in the twenty first century. This chronicle will motivate the force in striving for excellence. </h4>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>Responsibilities</h2>
+  <br>
+  <div class="">
+    <div class="">
+      <div class="alert bg-grey" role="alert">
+        <a href="#" class="alert-link" style="text-align: left; color: rgb(92, 92, 92); text-decoration: none;">
+          <h4> <strong>PREVENTION OF CRIME</strong></h4>
+          <ul style="text-align: left; color: rgb(92, 92, 92); text-decoration: none;">
+            <li>Surveillance on criminals.</li>
+            <li>Monitoring of records.</li>
+            <li>Beat patrolling, mobile and foot patrolling, surprise checks (Naka Bandis), combing operations and raids.</li>      
+            <li>Participative policing at macro and micro level through Mohalla Committees (system of neighborhood watch). Active involvement of NGOs.</li>
+          </ul>
+         </a>
+      </div>
+    </div>
+    <div class="">
+      <div class="alert bg-grey" role="alert">
+        <a href="#" class="alert-link" style="text-align: left; color: rgb(92, 92, 92); text-decoration: none;">
+          <h4> <strong>DETECTION OF CRIME</strong> </h4>
+          <ul style="text-align: left; color: rgb(92, 92, 92); text-decoration: none;">
+            <li>Investigation and prosecution of offenders.</li>
+          </ul>
+        </a>
+      </div>
+    </div>
+    <div class="">
+      <div class="alert bg-grey" role="alert">
+        <a href="#" class="alert-link" style="text-align: left; color: rgb(92, 92, 92); text-decoration: none;">
+          <h4> <strong>MAINTENANCE OF PUBLIC ORDER</strong> </h4>
+          <ul style="text-align: left; color: rgb(92, 92, 92); text-decoration: none;">
+            <li>Maintenance of law and order during festivals, elections, communal and social disturbances, natural calamities. </li>
+             <li> Maintenance of Internal Security: VIP security and counter espionage.</li>
+             <li> Special Crime: White collar crime, check on drug abuse, extortion by gangsters, control over smuggling of arms, check on gang activities.</li>
+          </ul>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+</div>
+
+
+ 
+
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Mumbai,Kurla</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Image of location/map -->
+
+
+
+
+</body>
+</html>
